@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../img/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSS files -->
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="../css/master.css">
+	<!-- Firebase requirements -->
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+	<title>SoNetAg</title>
+</head>
+<body>
+	<header class="header">
+		<img src="../img/logo.png" id="logo">
+		<div class="div_blur" id="div_blur">
+			<h1>SoNetAg</h1>
+			<p>Stay in touch with your loves, friends or colleagues !</p>
+		</div>
+		<div class="div_right">
+
+			<!-- Sign in block -->
+			<div class="div_login" id="div_login">
+				<div class="div_center">
+					<h4>Sign In</h4>
+					<input type="email" id="login" placeholder="Email"></input>
+					<input type="password" id="password" placeholder="Passsword"></input>
+					<div class="agreement">
+			            <input type="checkbox" id="stay_connected" value="stay_connected" name="stay_connected">
+		  				<label for="stay_connected">Stay log in</label>
+		  			</div>
+					<input type="submit" id="submit_log" value="Submit" onClick=""></input>
+					<p style="margin-top: 20px;"><a href="" id="password_forgotten">Password forgotten</a></p>
+					<p style="margin-top: 20px;">You don't have an account yet ? <a href="" id="displayRegisterBlock">Register here!</a></p>
+				</div>
+			</div>
+
+			<!-- Register block -->
+			<div class="div_login" id="div_register" ">
+				<div class="div_center">
+		            <h4>Register</h4>
+		            <div id="subscription">
+		            	<div>
+						    <input type="radio" id="sub_free" value="free" name="subscription" checked>
+	  						<label for="sub_free">Free</label>
+  						</div>
+  						<div>
+	  						<input type="radio" id="sub_prenium" value="prenium" name="subscription">
+	  						<label for="sub_prenium">Premium</label>
+  						</div>
+					</div>
+		            <input type="text" id="firstname" placeholder="Firstname"></input>
+		            <input type="text" id="name" placeholder="Name"></input>
+		            <input type="email" id="email" placeholder="Email"></input>
+		            <input type="password" id="password_1" placeholder="Passsword"></input>
+		            <input type="password" id="password_2" placeholder="Verify passsword"></input>
+		            <div class="agreement">
+			            <input type="checkbox" id="agreement" value="agree" name="agreement">
+		  				<label for="agreement">I read and understood the <a href="Terms of Use_SoNetAg.pdf" target="_blank">user agreement</a>.</label>
+		  			</div>
+		            <input type="submit" id="submit_reg" value="Submit" onClick=""></input>
+		            <p style="margin-top: 20px;">You already have an account ? <a href="" id="displayLoginBlock">Sign in</a></p>
+	            </div>
+	        </div>
+		</div>
+    </header>
+</body>
+
+<!-- JavaScript files -->
+<script type="text/javascript" src="../js/firebase.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
+</html>

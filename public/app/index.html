@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Web browser indexation -->
+    <meta name="robots" content="index"/>
+    <meta name="keywords" content="sonetag, social, network, agregator, reddit, twitter, yammer, tumblr"/>
+
+    <link rel="icon" href="../img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<!-- CSS files -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/post.css">
+	<link rel="stylesheet" type="text/css" href="css/createPost.css">
+	<link rel="stylesheet" type="text/css" href="../css/master.css">
+	<link rel="stylesheet" type="text/css" href="css/tourguide.css">
+	<!-- Firebase requirements -->
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<title>SoNetAg</title>
+
+	<!-- PWA manifest -->
+	<link rel="manifest" href="manifest.json" />
+</head>
+<body>
+	<header class="header">
+		<h2 id="header_title" style="font-size: 3vh;"></h2>
+	</header>
+
+	<!-- Menu -->
+    <nav class="nav nav_closed" data-tour="step: 1; title: Welcome; content: This is a short tour to help you with the website." >
+    	<div class="respnsive_sidebar">
+	    	<svg class="nav_arrow" version="1.1" id="Capa_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 width="100px" height="100px" viewBox="0 0 306 306" style="enable-background:new 0 0 306 306;" xml:space="preserve">
+				<g>
+					<g id="keyboard-arrow-right">
+						<polygon points="58.65,267.75 175.95,153 58.65,35.7 94.35,0 247.35,153 94.35,306 		"/>
+					</g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+			</svg>
+	    	<ul class="nav_list">
+	    		<li class="nav_list_item" id="sonetag" data-tour="step: 1; title: User guide; content: Click here to be redirected to the home page.">
+	    			<a href="" class="title">
+	    				<svg >
+							<use xlink:href="img/logo.svg#Capa_0"></use>
+						</svg>
+	    				<p>SoNetAg</p>
+	    			</a>
+	    		</li>
+	    		<div class="menu">
+		    		<li class="nav_list_item" id="home" data-tour="step: 1; title: User guide; content: This is your main page with all your posts from all your networks in one feed.">
+		    			<a href="">
+		    				<svg >
+								<use xlink:href="img/home.svg#Capa_1"></use>
+							</svg>
+
+		    				<p>Home</p>
+		    			</a>
+		    		</li>
+		    		<li class="nav_list_item" id="profile" data-tour="step: 1; title: User guide; content: Display your profile">
+		    			<a href="">
+		    				<svg >
+								<use xlink:href="img/profile.svg#Capa_2"></use>
+							</svg>
+		    				<p>Profile</p>
+		    			</a>
+		    		</li>
+		    		<div>
+			    		<li class="nav_list_item" id="addAccount" data-tour="step: 1; title: User guide; content: To add an account, click here and select the type of account you want to add.">
+			    			<a href="">
+				    			<svg >
+									<use xlink:href="img/add_account.svg#Capa_3"></use>
+								</svg>
+			    				<p>Add account</p>
+			    			</a>
+			    		</li>
+			    		<ul class="nav_list_item_sub_list" id="add_account_sub_list">
+		    				<li class="nav_list_item" id="twitter"><a href="">Twitter</a></li>
+		    				<li class="nav_list_item" id="reddit"><a href="">Reddit</a></li>
+		    				<li class="nav_list_item" id="linkedin"><a href="">Linkedin</a></li>
+		    				<li class="nav_list_item" id="yammer"><a href="">Yammer</a></li>
+		    				<li class="nav_list_item" id="tumblr"><a href="">Tumblr</a></li>
+		    			</ul>
+		    		</div>
+		    		<li class="nav_list_item" id="signOut" data-tour="step: 1; title: User guide; content: To sign out">
+		    			<a href="">
+		    				<svg >
+								<use xlink:href="img/log_out.svg#Capa_4"></use>
+							</svg>
+		    				<p>Sign out</p>
+		    			</a>
+		    		</li>
+
+		    		<li class="span_line"></li>
+		    		<h4 class="myNetworks_title">My Networks</h4>
+		    		<div id="div_list_networks" data-tour="step: 1; title: User guide; content: Find here all your social accounts you have added">
+		    			<ul id="div_list_networks_ul">
+				    		
+			    		</ul>
+			    	</div>
+		    	</div>
+	    	</ul>
+		</div>
+    </nav>
+
+    <!-- Display area for the content of each page -->
+    <section class="free_area">
+    	<div id="onload"></div>
+    	<div class="content" id="container">
+    		
+
+    		
+    	</div>
+    </section>
+</body>
+
+<!-- JavaScript scripts -->
+<script type="text/javascript" src="../js/firebase.js"></script> 
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/createPost.js"></script>
+<script type="text/javascript" src="js/post.js"></script>
+<script type="text/javascript" src="js/networks.js"></script>
+<script type="text/javascript" src="js/tourguide.min.js"></script>
+<script type="text/javascript" src="js/twitter.js"></script>
+<script type="text/javascript" src="js/reddit.js"></script>
+<script type="text/javascript" src="js/yammer.js"></script>
+<script type="text/javascript" src="js/tumblr.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
+<script type="text/javascript" src="js/profile.js"></script>
+<script type="text/javascript" src="js/displayOneSocial.js"></script>
+
+</html>

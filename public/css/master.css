@@ -1,0 +1,22 @@
+/*Variables for all the website*/
+:root{
+	--primary-color: #DD7D0F;
+	--primary-dark-color: #AC5E04;
+	--primary-light-color: #F59E39;
+	--secondary-color: #FFB55F;
+	--secondary-light-color: #FFC888;
+	--font-sonetag: 'Lobster', cursive;;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/*Body caracteristics for all the pages*/
+body {
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 100%;
+}

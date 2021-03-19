@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Firebase requirements -->
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+	<title>Reddit</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<p>You will be redirected</p>
+</body>
+<script type="text/javascript" src="../js/firebase.js"></script>
+<script type="text/javascript">
+	//Callback function
+	//Get the reddit tokens
+	(async function(){
+		// Get the code from the url params
+		let searchParams = new URLSearchParams(window.location.search);
+		var code = searchParams.get('code');
+
+		var url = URL_SERVER + "/getRedditApi_accessToken?code=" + code;
+
+		//Get the tokens
+		$.getJSON(url, function(result){
+			const url2 = "https://oauth.reddit.com/api/v1/me";
+
+			var access_token = result.access_token;
+			var refresh_token = result.refresh_token;
+
+			var requestOptions = {
+			        'method': 'GET',
+			        'headers': {
+			            'Authorization': 'Bearer ' + access_token,
+			            'user-agent': 'Browser:OneFeed:v0.1 (by /u/Geoffrey-Mo)'
+			        }
+			    };
+			//Get the account name    
+			fetch(url2, requestOptions)
+			  .then(response => response.text())
+			  .then(result => {
+			  	var data = JSON.parse(result);
+			  	//Save the information in the DB
+			  	saveIntoDb(data.name, access_token, refresh_token)
+			  })
+	  			.catch(error => console.log('error', error));
+	 	});
+	})();
+		
+		// Register data into the firebase DB
+	async function saveIntoDb(name, accessToken, refreshToken){
+		// Get the connected user
+		var user = await auth.currentUser;
+
+		// Get data stored in the DB for the user
+		const doc = await db.collection('users').doc(user.uid).get();
+
+		// Get his socials list
+		const socialAccounts = doc.data().socialAccounts;
+
+		// Add the new network
+		socialAccounts.push({
+		  type: "reddit",
+		  accountName: name,
+		  accessToken: accessToken,
+		  refreshToken: refreshToken
+		});
+
+		//Save the new list into the DB
+		await db.collection('users').doc(user.uid).update({socialAccounts: socialAccounts});
+		window.close();
+	  
+	}
+
+</script>
+</html>

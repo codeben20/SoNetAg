@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Firebase requirements -->
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+	<title>Yammer</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<p>You will be redirected</p>
+</body>
+<script type="text/javascript" src="../js/firebase.js"></script>
+<script type="text/javascript">
+	//Callback function
+	//Get the yammer tokens
+	(async function(){
+		// Get the code from the url params
+		let searchParams = new URLSearchParams(window.location.search);
+		var code = searchParams.get('code');
+
+		// URL to the server
+		var url = URL_SERVER + "/getYammerApi_accessToken?code=" + code;
+
+		// Get Tokens
+		$.getJSON(url, function(result){
+
+			var access_token = result.access_token;
+			var network_name = result.network_name;
+
+			saveIntoDb(network_name, access_token);
+	 	});
+	})();
+		
+		// Register data into the firebase DB
+	async function saveIntoDb(name, accessToken){
+		// Get the connected user
+		var user = await auth.currentUser;
+
+		// Get data stored in the DB for the user
+		const doc = await db.collection('users').doc(user.uid).get();
+
+		// Get his socials list
+		const socialAccounts = doc.data().socialAccounts;
+
+		// Add the new network
+		socialAccounts.push({
+		  type: "yammer",
+		  accountName: name,
+		  accessToken: accessToken
+		});
+
+		//Save the new list into the DB
+		await db.collection('users').doc(user.uid).update({socialAccounts: socialAccounts});
+		window.close();
+	  
+	}
+
+</script>
+</html>

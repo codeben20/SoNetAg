@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Firebase requirements -->
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+	<title>Tumblr</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<p>You will be redirected</p>
+</body>
+<script type="text/javascript" src="../js/firebase.js"></script>
+<script type="text/javascript">
+	//Callback function
+	//Get the tumblr tokens
+	(async function(){
+		// Get the code from the url params
+		let params = (window.location.search).split('?')[1];
+		let arr = params.split('&');
+		let searchParams = {};
+		for(var i = 0; i < arr.length; i++){
+			var a= arr[i].split('=');
+			searchParams[a[0]] = a[1];
+		}
+
+		// URL to the server
+		var url = URL_SERVER + "/tumblrAPI_oauth_2?oauth_verifier =" + searchParams.oauth_verifier  + "&accessToken=" + searchParams.oauth_token + "&secretToken=" + searchParams.source;
+
+		//Get the tokens
+		$.getJSON(url, function(result){
+
+			var oauth_token = result.oauth_token;
+			var oauth_token_secret = result.oauth_token_secret;
+			var accountName = result.name;
+
+			saveIntoDb(data.name, oauth_token, oauth_token_secret);
+	 	});
+	})();
+
+		// Register data into the firebase DB
+	async function saveIntoDb(name, accessToken, secretToken){
+		// Get the connected user
+		var user = await auth.currentUser;
+
+		// Get data stored in the DB for the user
+		const doc = await db.collection('users').doc(user.uid).get();
+
+		// Get his socials list
+		const socialAccounts = doc.data().socialAccounts;
+
+		// Add the new network
+		socialAccounts.push({
+		  type: "tumblr",
+		  accountName: name,
+		  accessToken: accessToken,
+		  secretToken: secretToken
+		});
+
+		//Save the new list into the DB
+		await db.collection('users').doc(user.uid).update({socialAccounts: socialAccounts});
+		window.close();
+	  
+	}
+
+</script>
+</html>

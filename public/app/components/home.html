@@ -1,0 +1,26 @@
+<div class="hov">
+    <div class="hov_card">
+        <h3>Select the social networks for publishing</h3>
+        <div></div>
+        <input type="submit" name="" id="publish" value="Publish">
+    </div>
+</div>
+<article class="content_article" id="article_home">
+    <div class="article_create_post" data-tour="step: 1; title: User guide; content: You can create a new post here for your social accounts">
+        <h3>Create a new post</h3>
+        <input type="text" name="post_title" id="post_title" placeholder="Title (for Reddit, Tumblr)">
+        <textarea id="post_text" rows="5" placeholder="Text"></textarea>
+        <div class="post_selected_img_div">
+            <div class="delete" id="create_post_delete">x</div>
+            <img src="" class="post_selected_img" id="post_selected_img">
+        </div>
+        <input type="file" name="post_img" id="post_img" accept="image/*" hidden>
+        <label for="post_img"><img src="img/add_photo.png" class="label_add_photo"></label>
+        <input type="submit" name="post_submit" id="post_submit" value="Publish">
+    </div>
+    <div class="list_post_header">
+        <span id="last_refresh"></span>
+        <img src="img/refresh.png" id="refresh_icon">
+    </div>
+    <div class="article_list_post" id="article_list_post"></div>
+</article>

@@ -1,0 +1,44 @@
+<svg version="1.1" id="Capa_0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" xml:space="preserve">
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="250" y1="343.5156" x2="318.5" y2="343.5156">
+		<stop  offset="0" style="stop-color:#DC7E27"/>
+		<stop  offset="1" style="stop-color:#1076A8"/>
+	</linearGradient>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="248.1479" y1="343.5156" x2="320.3516" y2="343.5156">
+		<stop  offset="0.3005" style="stop-color:#DC7E27"/>
+		<stop  offset="0.6207" style="stop-color:#1076A8"/>
+	</linearGradient>
+	
+		<line style="fill:url(#SVGID_1_);stroke:url(#SVGID_2_);stroke-width:4;stroke-miterlimit:10;" x1="250" y1="259.516" x2="318.5" y2="427.516"/>
+	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="78.6196" y1="189.501" x2="251.271" y2="189.501">
+		<stop  offset="0.2463" style="stop-color:#EF4823"/>
+		<stop  offset="0.6552" style="stop-color:#DC7E27"/>
+	</linearGradient>
+	
+		<line style="fill:none;stroke:url(#SVGID_3_);stroke-width:4;stroke-miterlimit:10;" x1="79.891" y1="119.486" x2="250" y2="259.516"/>
+	<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="71.3232" y1="291.5156" x2="250.6768" y2="291.5156">
+		<stop  offset="0.2463" style="stop-color:#2AAAE1"/>
+		<stop  offset="0.6552" style="stop-color:#DC7E27"/>
+	</linearGradient>
+	<line style="fill:none;stroke:url(#SVGID_4_);stroke-width:4;stroke-miterlimit:10;" x1="72" y1="323.516" x2="250" y2="259.516"/>
+	<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="249.5391" y1="237.0156" x2="440.4609" y2="237.0156">
+		<stop  offset="0.2463" style="stop-color:#CD6632"/>
+		<stop  offset="0.6552" style="stop-color:#BC2026"/>
+	</linearGradient>
+	
+		<line style="fill:none;stroke:url(#SVGID_5_);stroke-width:4;stroke-miterlimit:10;" x1="250" y1="259.516" x2="440" y2="214.516"/>
+	<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="248.0029" y1="168.0161" x2="261.5293" y2="168.0161">
+		<stop  offset="0.2463" style="stop-color:#DC7E27"/>
+		<stop  offset="0.7488" style="stop-color:#3B5999"/>
+	</linearGradient>
+	
+		<line style="fill:none;stroke:url(#SVGID_6_);stroke-width:4;stroke-miterlimit:10;" x1="259.532" y1="76.516" x2="250" y2="259.516"/>
+	<circle style="fill:#BD2026;" cx="440" cy="214.516" r="40"/>
+	<circle style="fill:#EF4823;" cx="83" cy="122.048" r="37.5"/>
+	<circle style="fill:#2AAAE1;" cx="72" cy="323.516" r="40"/>
+	<circle style="fill:#1076A8;" cx="318.5" cy="423.516" r="42.5"/>
+	<circle style="fill:#DC7E27;" cx="250" cy="259.516" r="68.5"/>
+	<circle style="fill:#3B5999;" cx="259.532" cy="76.516" r="30.532"/>
+</g>
+</svg>
