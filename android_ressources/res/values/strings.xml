@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Sonetag</string>
+    <string name="app_logo">Logo</string>
+
+    <string name="prompt_sign_in">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_pw">Password</string>
+    <string name="prompt_register">Register</string>
+    <string name="prompt_forgottenPW">Forgotten password</string>
+
+    <string name="prompt_send">Send</string>
+    <string name="prompt_cancel">Cancel</string>
+    <string name="prompt_emailSent">Email sent</string>
+    <string name="prompt_error">An error has occured</string>
+    <string name="prompt_lostPWMessage">To reset your password, an email will be send to the email address :</string>
+
+
+    <string name="prompt_verifyPW">Rewrite password</string>
+    <string name="prompt_name">Name</string>
+    <string name="prompt_firstname">Firstname</string>
+
+    <string name="prompt_authFailed">Authentication failed</string>
+    <string name="prompt_pwDif">Password different</string>
+    <string name="prompt_dbFailed">DB failed</string>
+    <string name="prompt_emailInvalid">Incorrect email</string>
+
+    <string name="no_internet_connection">No internet connection</string>
+
+    <string name="hamburger_menu">Menu</string>
+    <string name="prompt_text_home">My feed</string>
+    <string name="menu_prompt_home">Home</string>
+    <string name="menu_prompt_profile">Profile</string>
+    <string name="menu_prompt_addAccount">Add account</string>
+    <string name="menu_prompt_logout">Log out</string>
+    <string name="menu_prompt_myNetworks">My networks</string>
+
+    <string name="createPost_title">Create a post</string>
+    <string name="createPost_prompt_content">Post content</string>
+    <string name="createPost_prompt_publish">Publish</string>
+
+    <string name="profile_myProfile">My Profile</string>
+    <string name="addAccount_title">Add account</string>
+    <string name="prompt_last_update">Last update: </string>
+
+    <string name="prompt_dataUpdated">Data updated</string>
+    <string name="prompt_success">Success</string>
+
+    <string name="prompt_feed">Feed</string>
+    <string name="prompt_select_social">Select the social networks</string>
+    <string name="prompt_done">Done</string>
+
+    <string name="prompt_delete_account">Delete account</string>
+    <string name="prompt_validate">Validate</string>
+    <string name="prompt_account_remove">Account remove</string>
+
+    <string name="prompt_comment">Comment</string>
+
+
+</resources>

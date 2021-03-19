@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="271dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/profile_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/profile_nameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:labelFor="@+id/profile_name"
+                    android:text="@string/prompt_name"
+                    android:theme="@style/profileLabel"/>
+
+                <TextView
+                    android:id="@+id/profile_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/prompt_name"
+                    android:layout_marginStart="20dp"
+                    android:text=""
+                    tools:ignore="RtlCompat" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_normalSpaceBetweenItems" />
+
+                <TextView
+                    android:id="@+id/profile_firstnameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:labelFor="@+id/profile_firstname"
+                    android:text="@string/prompt_firstname"
+                    android:theme="@style/profileLabel"/>
+
+                <TextView
+                    android:id="@+id/profile_firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/prompt_firstname"
+                    android:layout_marginStart="20dp"
+                    android:text=""
+                    tools:ignore="RtlCompat" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_normalSpaceBetweenItems" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/profile_emailLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:id="@+id/profile_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="email"
+                        android:inputType="textEmailAddress" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

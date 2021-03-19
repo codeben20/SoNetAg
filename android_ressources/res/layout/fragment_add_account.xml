@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddAccountFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/addAccount_twitter"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_twitter_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/space"
+            android:tag="twitter"/>
+
+        <ImageView
+            android:id="@+id/addAccount_reddit"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:src="@drawable/ic_reddit_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/space"
+            android:tag="reddit"/>
+
+        <ImageView
+            android:id="@+id/addAccount_tumblr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="44dp"
+            android:src="@drawable/ic_tumblr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addAccount_twitter"
+            android:tag="tumblr"/>
+
+        <ImageView
+            android:id="@+id/addAccount_linkedin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:src="@drawable/ic_linkedin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addAccount_reddit"
+            android:tag="linkedin"/>
+
+        <ImageView
+            android:id="@+id/addAccount_yammer"
+            android:layout_width="173dp"
+            android:layout_height="188dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/yammer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addAccount_tumblr"
+            android:tag="yammer"/>
+
+        <!-- <Button
+             android:id="@+id/addAccount_twitter"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Twitter"
+             android:tag="twitter"/>
+
+         <Button
+             android:id="@+id/addAccount_reddit"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Reddit"
+             android:tag="reddit"/>
+
+         <Button
+             android:id="@+id/addAccount_pinterest"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Pinterest"
+             android:tag="pinterest"/>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
